@@ -1,14 +1,31 @@
 @charset "UTF-8"; /* 인코딩 문자 깨짐 방지 */
+/* 이미지 폰트 */
+/* @import url("fontawesome-all.min.css"); */
+/* 구글 폰트 */
+@import url("https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic|Source+Code+Pro:400");
+
+
+/* common ----------------------------------- */
 
 html {
     /* 사용자가 설정한 문자 크기 그대로 반영 될 수 있도록 */
     font-size: 100%;
+    box-sizing: border-box;
     /* em -> 부모
         rem -> 최상위 부모 */
 }
 
-body {
-    color: #432;
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+
+body, p {
+    background: #fff;
+    color: #000000;
+    font-family: "Lato", sans-serif;
+    font-size: 16pt;
+    font-weight: 400;
     line-height: 2.0;
 }
 
@@ -16,242 +33,318 @@ a {
     text-decoration: none;      /* 하이퍼링크 밑줄 없애기 */
 }
 
-img {
-    max-width: 100%;
+
+/* layout ---------------------------------------- */
+.pageLayout {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
+
 
 /* header ---------------------------------------- */
 
-/* 로고 크기 및 여백 */
-.logo {
-    width: 210px;
-    margin-top: 14px;
+.header-class {
+    min-height: 100vh;
+    background: linear-gradient(180deg,rgba(27, 27, 27, 0.8) 0,rgba(27, 27, 27, 0.8) 90%),
+            url("../images/home.jpg") 50% no-repeat;
+    flex-direction: column;
 }
 
-/* nav 메뉴 */
-.main-nav {
+.page-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    justify-content: end;
+    max-width: 650px;
+    margin: 0 18% 0 auto;
+}
+
+.header-text {
+    display: flex;
+    background: rgba(0,0,0,.6);
+    height: 50px;
+    width: 650px;
+    border-radius: 2px 2px 30px 30px;
+}
+
+.header-text ul{
     display: flex;
     list-style-type: none;
-    font-size: 1.25rem;
+    font-size: 0.95rem;
     text-transform: uppercase;
-    margin-top: 34px;
+    margin-top: 10px;
+    margin-left: 40px;
 }
 
-.main-nav li {
+.header-text li {
     margin-right: 36px;
 }
 
-.main-nav a {
-    color: #432;
+.header-text a {
+    color: #8d8a8a;
 }
 
-.main-nav a:hover{
-    color: #0bd;
-}
-
-/* 로고와 내비의 수평 정렬 */
-.page-header {
-    display: flex;
-    justify-content: space-between;
-}
-
-/* 콘텐츠의 최대 출력 너비 설정 */
-.wrapper {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding:  0 4%;
+.header-text a:hover{
+    color: #fff;
 }
 
 /* home -------------------------------------- */
+
 .home-content {
     text-align: center;
-    margin-top: 10%;
-}
-
-.home-content p {
-    font-size: 1.125rem;
-    margin: 10px 0px 42px;
+    margin-top: 18%;
 }
 
 .page-title {
-    font-size: 5rem;
-    text-transform: uppercase;
-    font-weight: normal;
-}
-
-/* 메뉴 보기 버튼 */
-.button {
-    background: #0bd;
-    padding: 15px 32px;
-    color: white;
-    font-size: 1.375rem;
-    border-radius: 5px;
-}
-
-/* 큰 배경 이미지 */
-#home {
-    background-image: url("../images/main-bg.jpg");
-    min-height: 100vh;
-}
-
-.big-bg {
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-}
-
-
-/* news --------------------------------------- */
-#news {
-    background-color: skyblue;
-    height: 270px;
-    margin-bottom: 40px;
-}
-
-#news .page-title {
-    text-align: center;
-}
-
-/* footer --------------------------------- */
-footer {
-    background-color: #432;
-    text-align: center;
-    padding: 26px 0;
-}
-
-footer p {
-    color: white;
-}
-
-/* news content ------------------------- */
-
-/* 기사 부분 */
-article {
-    /* width: 74%; */
-    /* 2-column에서 3-column으로 변경 시 width 조정 */
-    width: 55%;
-    order : 2;
-}
-
-/* 사이드바 */
-aside {
-    width: 22%;
-    order : 3;
-}
-
-/* 광고 배너 */
-.ad {
-    /* 컬럼 순서 변경 - display:flex 가 적용 된 자식 요소에서 동작 */
-    order : 1;
-}
-
-/* 수평 정렬 및 여백 */
-.news-content {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 40px;
-}
-
-/* 기사 날짜 장식 */
-.post-info {
-    position: relative;
-    padding-top: 4px;
-    padding-bottom: 40px;
-}
-
-.post-date {
-    background-color: #0bd;
-    width: 100px;
-    height: 100px;
     color: #fff;
-    border-radius: 50%;
-    font-size: 1.625rem;
-    text-align: center;
-    /* post-info 기준 절대 위치 */
-    position: absolute;
-    top: 0;
-    padding-top: 10px;
+    font-size: 4rem;
 }
 
-.post-date span {
-    font-size: 1rem;
-    border-top: 1px rgb(255, 255, 255, 0.5) solid;
-    padding-top: 6px;
-    display: block;
-    width: 60%;
+
+/* content -------------------------------------- */
+
+
+.wrapper {
+    width: 100%;
+    max-width: 1400px;
     margin: 0 auto;
+    padding: 3rem 10rem;
+    /* border-bottom: #c1c2c4 1px solid; */
 }
 
-.post-title {
-    font-family: "나눔명조";
-    font-size: 2rem;
-    font-weight: normal;
+.content {
+    display: table;
+    position: relative;
+    margin: 0 auto 3rem;
 }
 
-.post-title, .post-cat {
-    margin-left: 120px;
+.container {
+    width: 100%;
+    max-width: 1718px;
+    align-self: center;
+    margin-top: 1px;
+    margin-bottom: 1px;
 }
 
-article img {
-    margin-bottom: 20px;
+.section_title_text {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #cccccc;
+    font-style: italic;
+    font-weight: 900;
+    font-size: 3rem;
+    line-height: 1.5;
 }
 
-article p {
+
+/* aboutMe */
+.aboutMe_goodText {
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.aboutMe_info {
+    display: flex;
+    flex-wrap: row wrap;
+    justify-content: space-between;
+}
+
+.aboutMe_info p {
+    color: #434446;
+    font-size: 1rem;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    padding-left: 15px;
+}
+
+.aboutMe_info .contact {
+    /* color: #491bc5; */
+    padding-right: 100px;
+}
+
+.contact_list {
+    margin-top: 20px;
+}
+
+.contact_list a {
+    color: #434446;
+}
+
+.contact_list a:hover {
+    color: #93c550;
+}
+
+.contact_list .contact_title {
+    margin-right: 15px;
+    font-weight: 900;
+    font-size: 1.05rem;
+    color: #491bc5;
+}
+
+.contact_list p {
+    margin-right: 15px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 0px;
+}
+
+/* education, career */
+#education {
+    background-color: #e7e6e6;
+}
+
+.shadowBox_left {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 30px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 30%;
+}
+
+.shadowBox_mid {
+    position: relative;
+    width: 15%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    transition: opacity 200ms ease-out 0s;
+    opacity: 0;
+}
+
+.shadowBox_right {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 50%;
+}
+
+.shadowBox_title {
+    font-weight: 900;
+    font-size: 1.3rem;
+    line-height: 2;
+}
+
+.shadowBox_content {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.shadowBox_content li {
+    list-style-type: square;
+    margin-top: 3px;
+    margin-left: 1em;
+}
+
+.shadowBox {
+    display: flex;
+    width: 80%;
+    padding: 1.5rem;
+    margin: 0 10% 2em;
+    border-radius: 1rem;
+    background-color: #fff;
+    box-shadow: 1rem 1rem 1rem 0 rgba(68,68,68,.2);
+}
+
+/* skills */
+#skills {
+    /* background-color: #f9c51d; */
+}
+
+.skills-flex {
+    display: flex;
+    
+}
+
+.skills-Box {
+    flex-direction: row;
+    width: 100%;
+    padding: 1.5rem;
+    margin: 0 2% 2em;
+    border-radius: 1rem;
+    background-color: #fff;
+    box-shadow: 1rem 1rem 1rem 0 rgba(68,68,68,.2);
+}
+
+.skills-title {
+    text-align: center;
+    font-style: italic;
+    padding: 5px 2rem;
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: #e7c320;
+    border-bottom: #c1c2c4 1px solid;
+    line-height: 2;
+}
+
+.skills-img img {
+    width: 100%;
+    margin-top: 20px;
+}
+
+
+/* career */
+#career {
+    background-color: #e7e6e6;
+}
+
+/* project */
+#project {
+    /* background-color: #5ab1cc; */
+}
+
+
+
+
+
+
+
+
+
+
+
+/* footer -------------------------------------- */
+.footer-class {
+    flex-direction: column;
+    height: 11rem;
+    padding-top: 3rem;
+    background-color: #222;
+    text-align: center;
+}
+
+.footer-icons {
     margin-bottom: 1rem;
 }
 
-/* side bar ---------------------------------- */
-.sub-title {
-    font-size: 1.375rem;
-    padding: 0 8px 8px;
-    border-bottom: 2px #0bd solid;
-    font-weight: normal;
+.footer-icons .icons-bg-white {
+    background-color: #fff;
 }
 
-.sub-menu {
-    list-style: none;
-    margin-bottom: 60px;
+.footer-icons li {
+    position: relative;
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    padding: 2px;
+    margin: 0 0.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
 }
 
-.sub-menu li {
-    border-bottom: 1px #ddd solid;
+.footer-icons li img {
+    width: 100%;
 }
 
-.sub-menu a {
-    color: #432;
-    padding: 10px;
-    display: block;     /* 영역 전체를 클릭가능하도록 */
-}
-
-.sub-menu a:hover {
-    color: #0bd;
-}
-
-aside p {
-    padding: 12px 10px;
+.footer-copyright {
+    font-weight: 400;
+    font-size: .9rem;
+    color: #f5f5f5;
 }
 
 
-/* menu ----------------------------------- */
-#menu {
-    background-image: url(../images/menu-bg.jpg);
-    min-height: 100vh;
-}
-
-.menu-content {
-    max-width:  560px;
-    margin-top: 10%;
-}
-
-.menu-context .page-title {
-    text-align: center;
-}
-
-.menu-content p {
-    font-size: 1.125rem;
-    font-weight: bolder;
-    margin: 10px 0 0;
-}
 
 /* for mobile --------------------------------------- */
 /* 변경 기준이 되는 화면 크기를 브레이크 포인트라고 하며 디바이스 별로 width는 다르다.
@@ -265,12 +358,12 @@ aside p {
 
     /* header */
     /* 내비 글자 크기 및 여백 축소 */
-    .main-nav {
+    .header-text {
         font-size: 1rem;
         margin-top: 10px;
     }
 
-    .main-nav li {
+    .header-text li {
         margin: 0 20px;
     }
 
