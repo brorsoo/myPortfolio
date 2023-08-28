@@ -8,9 +8,9 @@
 /* common ----------------------------------- */
 
 html {
-    /* 사용자가 설정한 문자 크기 그대로 반영 될 수 있도록 */
     font-size: 100%;
     box-sizing: border-box;
+    scroll-behavior: smooth;
     /* em -> 부모
         rem -> 최상위 부모 */
 }
@@ -108,11 +108,23 @@ a {
 
 .wrapper {
     width: 100%;
-    max-width: 1400px;
+    max-width: 1500px;
+    border-radius: 20px;
     margin: 0 auto;
     padding: 3rem 10rem;
     /* border-bottom: #c1c2c4 1px solid; */
 }
+
+.wrapper2 {
+    width: 100%;
+    background-color: #d9be94;
+    border-radius: 20px;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 3rem 10rem;
+    /* border-bottom: #c1c2c4 1px solid; */
+}
+
 
 .content {
     display: table;
@@ -249,6 +261,87 @@ a {
     box-shadow: 1rem 1rem 1rem 0 rgba(68,68,68,.2);
 }
 
+.shadowBox2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1.5rem;
+    margin-bottom: 5rem;
+    border-radius: 1rem;
+    background-color: #fff;
+    box-shadow: 1rem 1rem 1rem 0 rgba(68,68,68,.2);
+}
+
+.shadowBox2_title_big {
+    font-style: italic;
+    font-weight: 900;
+    font-size: 2rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.shadowBox2_title_small {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.shadowBox2_top {
+    padding: 2% 0;
+}
+
+.shadowBox2_bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 3%;
+}
+
+.shadowBox_img img{
+    width: 100%;
+}
+
+.shadowBox2_left {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 50%;
+}
+
+.shadowBox2_right {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 50%;
+    padding: 0 3%;
+}
+
+.shadowBox2_about {
+    font-size: 13pt;
+    font-weight: 400;
+    line-height: 2.0;
+    margin-bottom: 30px;
+    padding-bottom: 80px;
+    border-bottom: 1px solid #c1c2c4;
+}
+
+.shadowBox2_about p {
+    font-size: 12pt;
+    font-weight: 400;
+    line-height: 2.0;
+    margin-bottom: 30px;
+}
+
+.shadowBox2_content {
+    font-size: 1rem;
+    line-height: 2;
+}
+
+.shadowBox2_content li {
+    list-style-type: disclosure-open;
+    margin-top: 3px;
+    margin-left: 1em;
+}
+
+
+
 /* skills */
 #skills {
     /* background-color: #f9c51d; */
@@ -291,18 +384,6 @@ a {
     background-color: #e7e6e6;
 }
 
-/* project */
-#project {
-    /* background-color: #5ab1cc; */
-}
-
-
-
-
-
-
-
-
 
 
 
@@ -343,6 +424,9 @@ a {
     font-size: .9rem;
     color: #f5f5f5;
 }
+
+
+
 
 
 
