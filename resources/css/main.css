@@ -95,11 +95,13 @@ a {
 .home-content {
     text-align: center;
     margin-top: 18%;
+    line-height: 60px;
 }
 
 .page-title {
     color: #fff;
     font-size: 4rem;
+    /* text-shadow: 2px 2px 4px #fff; */
 }
 
 
@@ -107,21 +109,21 @@ a {
 
 
 .wrapper {
-    width: 100%;
+    width: 70%;
     max-width: 1500px;
     border-radius: 20px;
     margin: 0 auto;
-    padding: 3rem 10rem;
+    padding: 3rem 6rem;
     /* border-bottom: #c1c2c4 1px solid; */
 }
 
 .wrapper2 {
-    width: 100%;
+    width: 70%;
     background-color: #d9be94;
     border-radius: 20px;
     max-width: 1500px;
     margin: 0 auto;
-    padding: 3rem 10rem;
+    padding: 3rem 6rem;
     /* border-bottom: #c1c2c4 1px solid; */
 }
 
@@ -340,6 +342,11 @@ a {
     margin-left: 1em;
 }
 
+.shadowBox2_content img {
+    width: 20px;
+    height: 20px;
+}
+
 
 
 /* skills */
@@ -426,6 +433,18 @@ a {
 }
 
 
+/* typing -------------------------------------- */
+.blink {
+    animation: blink 0.5s infinite;
+    font-size: 5rem;
+    color: #fff;
+}
+
+@keyframes blink {
+    to {
+        opacity: 0;
+    }
+}
 
 
 
